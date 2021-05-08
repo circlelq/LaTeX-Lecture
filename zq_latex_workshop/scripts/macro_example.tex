@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage[a4paper,scale=0.75]{geometry}
+\usepackage{commath}
+\usepackage{mathtools}
+\usepackage{tensor}
+\usepackage[font=footnotesize, labelfont=bf, labelformat=empty]{caption}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+\def\includedemofigure#1#2{
+    \begin{subfigure}{0.3\linewidth}
+        \includegraphics[width=\linewidth]{../figures/#1.png}
+        \caption{#2}
+    \end{subfigure}
+}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{figure}
+    \centering
+    \includedemofigure{sin}{\(y=\sin x, x\in[0,2\pi]\)}
+    \includedemofigure{cos}{\(y=\cos x, x\in[0,2\pi]\)}
+    \\
+    \includedemofigure{square}{\(y=x^2, x\in[-1,1]\)}\
+    \includedemofigure{exp}{\(y=\mathrm{e}^x, x\in[-1,1]\)}
+    \caption{\textbf{Figure~\ref{Figure-Subfigures}.} Illustration of subfigures.}\label{Figure-Subfigures}
+\end{figure}
+\end{document}

@@ -1,0 +1,86 @@
+\section{Equation}
+
+\subsection{Multi-line Formula}
+
+When writing about PDEs, we usually need to write the equations and their initial and/or boundary conditions in one equation, i.e., use only one number for the equation and IC/BC\@. We will show how to write multi-line formula with the example of heat equation and its solution. The main idea of writing multi-line formula are using \verb|eqnarray| and \verb|array| environment.
+Heat Equation.
+\begin{equation}
+    \left\{\begin{array}{l}
+        \dfrac{\partial u}{\partial t} = a^2 \dfrac{\partial^2 u}{\partial t^2}, t
+        > 0, - \infty < x < + \infty \\
+        u |_{t = 0} = \varphi (x) |
+    \end{array}\right.
+\end{equation}
+Solution
+\begin{eqnarray}
+    u (t, x) & = & \mathcal{F}^{- 1} \left[ \hat{\varphi} (\lambda) e^{_{- a^2
+                        \lambda^2 t}} \right] \nonumber\\
+    & = & \mathcal{F}^{- 1} [\hat{\varphi} (\lambda)] \ast \mathcal{F}^{- 1}
+    \left[ e^{_{- a^2 \lambda^2 t}} \right] \nonumber\\
+    & = & \varphi (x) \ast \dfrac{1}{2 a \sqrt{\pi t}} \exp \left( -
+    \dfrac{x^2}{4 a^2 t} \right) \nonumber\\
+    & = & \dfrac{1}{2 a \sqrt{\pi t}} \int_{- \infty}^{+ \infty} \varphi (\xi)
+    \exp \left( - \dfrac{(x - \xi)^2}{4 a^2 t} \right) \mathrm{d} \xi
+\end{eqnarray}
+
+\subsection{Matrix and determinant}
+
+Matrix and determinant are common in dynamics and continuum mechanics. Here we use the relationship of coordinates vector as an example. The main idea of writing matrix and determinant is \verb|array| and \verb|&| symbol.
+\begin{equation}
+    \textbf{e}_i = \sum_{i = 1}^n \dfrac{1}{H_i} \dfrac{\partial r_i}{\partial
+        x_i} \textbf{i}_i
+\end{equation}
+Denote \(\textbf{e} = \{ \textbf{e}_1, \textbf{e}_2, \ldots,
+\textbf{e}_n \}\), \(\textbf{i} = \{ \textbf{i}_1, \textbf{i}_2, \ldots,
+\textbf{i}_n \}\), then
+\begin{equation}
+    \textbf{e} = A \textbf{i}
+\end{equation}
+where
+\begin{eqnarray}
+    A & = & \left(\begin{array}{cccc}
+        \dfrac{1}{H_1} \dfrac{\partial r_1}{\partial x_1} & \dfrac{1}{H_1}
+        \dfrac{\partial r_2}{\partial x_1}                & \cdots         & \dfrac{1}{H_1} \dfrac{\partial
+            r_n}{\partial x_1}                                                                                               \\
+        \dfrac{1}{H_2} \dfrac{\partial r_1}{\partial x_2} & \dfrac{1}{H_2}
+        \dfrac{\partial r_2}{\partial x_2}                &                &                                                 \\
+        \vdots                                            &                & \ddots                         &                \\
+        \dfrac{1}{H_n} \dfrac{\partial r_1}{\partial x_n} &                &                                & \dfrac{1}{H_n}
+        \dfrac{\partial r_n}{\partial x_n}
+    \end{array}\right)
+\end{eqnarray}
+and
+\begin{eqnarray}
+    \det A & = & \left|\begin{array}{cccc}
+        \dfrac{1}{H_1} \dfrac{\partial r_1}{\partial x_1} & \dfrac{1}{H_1}
+        \dfrac{\partial r_2}{\partial x_1}                & \cdots         & \dfrac{1}{H_1} \dfrac{\partial
+            r_n}{\partial x_1}                                                                                               \\
+        \dfrac{1}{H_2} \dfrac{\partial r_1}{\partial x_2} & \dfrac{1}{H_2}
+        \dfrac{\partial r_2}{\partial x_2}                &                &                                                 \\
+        \vdots                                            &                & \ddots                         &                \\
+        \dfrac{1}{H_n} \dfrac{\partial r_1}{\partial x_n} &                &                                & \dfrac{1}{H_n}
+        \dfrac{\partial r_n}{\partial x_n}
+    \end{array}\right|
+\end{eqnarray}
+
+\subsection{Differential Symbol}
+
+Integral is common in equations and formula. The \verb|d| symbol is very tricky. It should not be italic and should be separated from the integrand by a space. We can use the command \verb|\dif| in package \verb|commath| to write \verb|d| correctly.
+
+\begin{eqnarray}
+    \int_0^1 x dx = \frac{1}{2}x^2 \Bigg|_0^1 = \frac{1}{2}\\
+    \int_0^1 x \mathrm{d}x = \frac{1}{2}x^2 \Bigg|_0^1 = \frac{1}{2}\\
+    \int_0^1 x \dif x = \frac{1}{2}x^2 \Bigg|_0^1 = \frac{1}{2}
+\end{eqnarray}
+
+\subsection{Tensor Scripts}
+
+Here are two different approach to write subscript and superscript for a tensor or operator symbol. For general purpose
+\begin{equation}
+    \prescript{a}{b}{C}_{d}^{c}
+\end{equation}
+, or use package \verb|Tensor|
+\begin{eqnarray}
+    M\indices{^a_b^{cd}_e}\\
+    \tensor[^a_b^c_d]{M}{^a_b^c_d}
+\end{eqnarray}

@@ -1,0 +1,1 @@
+gswin64.exe -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dNOPAUSE -dQUIET -dBATCH -dPrinted=false -sOutputFile=crop_compressed.pdf crop.pdf

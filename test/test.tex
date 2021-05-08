@@ -1,0 +1,124 @@
+\documentclass[12pt]{article}
+\input{setting.tex}
+
+% 章节标号深度
+% \setcounter{secnumdepth}{2}
+
+% 首行缩近
+\setlength{\parindent}{2em}
+\graphicspath{{fig/}}
+
+
+%pdf文件设置
+\hypersetup{
+	pdfauthor={作者名字},
+	pdftitle={文件名}
+}
+
+\title{标题}
+\author{作者}
+\date{\today}
+
+\begin{document}
+
+% 部分中文标识设置，例如 图
+\input{setc.tex}
+
+\maketitle
+
+
+\section{文字段落}
+
+
+\lipsum[1]\footnote{这是一段随机生成的文字。}
+
+\subsection{有序列表}
+
+\begin{enumerate}
+	\item 1
+	\item 2
+	\item 3
+\end{enumerate}
+
+\subsection{无序列表}
+
+\begin{itemize}
+	\item 1
+	\item 2
+	\item 3
+\end{itemize}
+
+% \lipsum[1]
+
+\section{图片}
+
+引用\cref{fig:1}.
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=7cm]{pku.pdf}
+	\caption{图片示例。}
+	\label{fig:1}
+\end{figure}
+
+\section{表格}
+
+
+\begin{table}[htp]
+	\centering
+	\caption{表格示例.}
+	\begin{tabular}{cc}
+		\toprule  1 & 2     \\
+		\midrule
+		内容1       & 内容2 \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:1}
+\end{table}
+
+\section{公式}
+
+
+\begin{equation}
+	\bm{F} = m\bm{a}.
+	\label{eq:1}
+\end{equation}
+\cref{eq:1}用到了\texttt{bm}包，可以方便地加粗符号。
+
+\begin{equation}
+	\int^b_a f(x) \dif x=F(x)\bigg|^b_a.
+	\label{eq:2}
+\end{equation}
+\cref{eq:2}用到了\texttt{commath}包，可以方便地写微分算符。
+
+\begin{equation}
+	\me ^{\pi \mi} + 1 = 0.
+	\label{eq:3}
+\end{equation}
+\cref{eq:3}用到了自定义的\verb|\me, \mi|来表示常数$\me,\ \mi$.
+
+\section{代码}
+
+可以设置不同语言来高量代码。
+
+\begin{lstlisting}[language=python]
+import numpy as np
+\end{lstlisting}
+
+\begin{lstlisting}[language=c]
+#include <stdio.h>
+main(){
+    printf("Hello World");
+}
+\end{lstlisting}
+
+\section{参考文献}
+
+引用参考文献 .本模版设置了参考文献返回的链接，即参考文献最后的数字。\cite{olsthoorn}
+
+
+% \nocite{*}
+
+\input{bib.tex}
+
+\end{document}

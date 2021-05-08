@@ -1,0 +1,149 @@
+\usepackage{natbib}
+\usepackage{url}
+\usepackage{stmaryrd}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+% \usepackage{underscore} % 下划线设置
+\usepackage{commath}%定义d
+\usepackage[UTF8,scheme = plain,scheme = chinese]{ctex}
+\usepackage{geometry}
+\usepackage{bm}
+\usepackage{autobreak}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage{paralist}
+\usepackage{multirow}
+\usepackage{booktabs} % To thicken table lines
+\usepackage{diagbox}
+\usepackage{authblk}
+\usepackage{indentfirst}
+\usepackage{amsthm}
+\usepackage{fontspec}
+\usepackage{color}
+%\usepackage{txfonts} %设置字体为times new roman
+\usepackage{lettrine}
+\usepackage{nameref}
+%\usepackage[nottoc]{tocbibind}
+\usepackage{amssymb}%font
+\usepackage{lipsum}%make test words
+\usepackage{picinpar}%words around the picture
+\usepackage[all]{xy}%draw arrow
+\usepackage{asymptote}%draw picture
+\usepackage[perpage]{footmisc}%脚注每页清零
+\usepackage{esint}
+\renewcommand{\proofname}{\indent \sf \bfseries{证明}}
+
+\catcode`\。=\active
+\catcode`\，=\active
+\catcode`\；=\active
+\catcode`\：=\active
+\newcommand{。}{．}
+\newcommand{，}{,}
+\newcommand{；}{;}
+\newcommand{：}{:}
+
+\geometry{bottom=3cm,left=3cm,right=3cm,top=3cm}
+% \footskip = 60pt
+
+% \setmainfont{TimesNewRomanPSMT}
+% \setsansfont{Helvetica-Light}
+% \setCJKmainfont[ItalicFont=STKaitiSC-Regular,BoldFont=STSongti-SC-Black]{STSongti-SC-Regular}
+% \setCJKsansfont[BoldFont=STHeitiSC-Medium]{STHeitiSC-Light}
+
+
+%\setmainfont{Times New Roman}
+
+\ctexset{today=old}%日期类型设置
+
+% ======================================
+% = Color de la Universidad de Sevilla =
+% ======================================
+\usepackage{tikz}
+\definecolor{PKUred}{cmyk}{0,1,1,0.45}
+
+%超链接设置
+\usepackage[breaklinks,colorlinks,linkcolor=PKUred,citecolor=PKUred,pagebackref,urlcolor=PKUred]{hyperref}
+\usepackage{cleveref}
+\newcommand{\crefpairconjunction}{ 和 }
+
+% 节样式设置
+% \newcommand{\hsp}{\hspace{20pt}}
+% \newcommand{\nhsp}{\hspace{-30pt}}
+% \titleformat{\section}{\Large\bfseries}{%\arabic{section}
+%   \hspace{-22pt}\textcolor{PKUred}{\vrule width 2pt}\hsp}{0pt}{}
+
+
+\titleformat{\subsection}
+{\normalfont\large\bfseries}{}{0em}{}
+
+% footnote 设置
+% \renewcommand*\footnoterule{%
+%   \vspace*{-3pt}%
+%   {\color{PKUred}\hrule width 2in height 0.4pt}%
+%   \vspace*{2.6pt}%
+% }
+
+
+%% Color the bullets of the itemize environment and make the symbol of the third
+%% level a diamond instead of an asterisk.
+%h\renewcommand*\textbullet{\dag}
+\renewcommand*\labelitemi{\color{PKUred}\textbullet}
+\renewcommand*\labelitemii{\color{PKUred}--}
+\renewcommand*\labelitemiii{\color{PKUred}$\diamond$}
+\renewcommand*\labelitemiv{\color{PKUred}\textperiodcentered}
+
+
+
+%%% Equation and float numbering
+\numberwithin{equation}{section}		% Equationnumbering: section.eq#
+\numberwithin{figure}{section}			% Figurenumbering: section.fig#
+\numberwithin{table}{section}				% Tablenumbering: section.tab#
+
+
+%代码设置
+\usepackage{listings}
+\usepackage{fontspec} % 定制字体
+\newfontfamily\menlo{SFMono-Regular}
+\usepackage{xcolor} % 定制颜色
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\lstset{
+  numbers=left,
+  numberstyle=\footnotesize\menlo,
+  basicstyle=\footnotesize\menlo,
+  backgroundcolor=\color{white},      % choose the background color
+  columns=fullflexible,
+  tabsize=4,
+  breaklines=true,               % automatic line breaking only at whitespace
+  captionpos=b,                  % sets the caption-position to bottom
+  commentstyle=\color{mygreen},  % comment style
+  escapeinside={\%*}{*)},        % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},     % keyword style
+  stringstyle=\color{mymauve}\ttfamily,  % string literal style
+  frame=single,
+  rulesepcolor=\color{red!20!green!20!blue!20},
+  % identifierstyle=\color{red},
+  language=c++,
+  xleftmargin=4em,xrightmargin=2em, aboveskip=1em,
+  framexleftmargin=2em,
+  numbers=left
+}
+
+% 脚注
+% \renewcommand\thefootnote{\fnsymbol{footnote}}
+
+%定义常数i、e、积分符号d
+\newcommand\mi{\mathrm{i}}
+\newcommand\me{\mathrm{e}}
+
+%%% Maketitle metadata
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} 	% Horizontal rule
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+

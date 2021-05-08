@@ -1,0 +1,55 @@
+\usepackage[UTF8]{ctex}
+\usepackage{commath}%定义d
+\usepackage{graphicx}
+\graphicspath{{fig/}}
+\usepackage{booktabs} % To thicken table lines
+\usepackage{bm}
+\usepackage{cleveref}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{latexsym}
+\usepackage{minted}
+\usepackage{amsmath}
+\newcommand\mi{\mathrm{i}}
+\newcommand\me{\mathrm{e}}
+
+
+%代码设置
+\usepackage{listings}
+\usepackage{fontspec} % 定制字体
+\newfontfamily\menlo{SFMono-Regular}
+\usepackage{xcolor} % 定制颜色
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\lstset{
+    % numbers=left,
+    % numberstyle=\footnotesize\menlo,
+    basicstyle=\footnotesize\menlo,
+    backgroundcolor=\color{white},      % choose the background color
+    columns=fullflexible,
+    tabsize=4,
+    breaklines=true,               % automatic line breaking only at whitespace
+    captionpos=b,                  % sets the caption-position to bottom
+    % commentstyle=\color{mygreen},  % comment style
+    escapeinside={\%*}{*)},        % if you want to add LaTeX within your code
+    keywordstyle=\color{blue},     % keyword style
+    stringstyle=\color{mymauve}\ttfamily,  % string literal style
+    frame=single,
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    % identifierstyle=\color{red},
+    language=c++,
+    xleftmargin=1em,xrightmargin=2em, aboveskip=1em,
+    framexleftmargin=2em,
+    % numbers=left
+}
+
+%脚注
+\renewcommand\thefootnote{\fnsymbol{footnote}}
+
+
+%%% Maketitle metadata
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} 	% Horizontal rule
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+
